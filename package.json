@@ -1,16 +1,8 @@
 {
-<<<<<<< HEAD
-  "name": "andrescorrales",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-=======
   "name": "apihotel",
   "version": "1.0.0",
   "description": "",
-  "main": "Pruebas.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -18,22 +10,21 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AndresCorralesDebuggg/Hotel-Management-API.git"
->>>>>>> 800144e44e419de9804fcd7628865943c3d8d326
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-<<<<<<< HEAD
-=======
   "bugs": {
     "url": "https://github.com/AndresCorralesDebuggg/Hotel-Management-API/issues"
   },
   "homepage": "https://github.com/AndresCorralesDebuggg/Hotel-Management-API#readme",
->>>>>>> 800144e44e419de9804fcd7628865943c3d8d326
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
     "pg": "^8.20.0"
   }
 }
