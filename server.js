@@ -154,7 +154,7 @@ app.delete('/habitaciones/:id_habi', async (req,res) => {
 });
 
 // DELETE - Eliminar cliente
-app.delete('/clientes/:id', async (req, res) => {
+app.delete('/clientes/:id', verificarToken, async (req, res) => {
     try {
         const { id } = req.params;
         await pool.query('DELETE FROM clientes WHERE id_clientes = $1', [id]);
