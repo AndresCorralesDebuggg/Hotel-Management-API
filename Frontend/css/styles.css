@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --primary-color: #2679f7;
+    --primary-hover: #1c60c7;
+    --bg-gradient: linear-gradient(135deg, #161d2e 0%, #122035 100%);
+    --card-bg: rgba(30, 41, 59, 0.8);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --input-line: #475569;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    /* Mantenemos el centrado para login/register */
+    align-items: center; 
+    justify-content: center;
+    color: var(--text-main);
+    padding: 20px;
+}
+
+/* --- CLASE NUEVA PARA EL INDEX --- */
+/* Esta clase anula el centrado del body y expande el contenedor */
+body:has(.full-view) {
+    align-items: flex-start; /* Empieza desde arriba */
+    padding: 0; /* Elimina el padding exterior en el home */
+}
+
+.container.full-view {
+    max-width: 100%; /* De lado a lado */
+    min-height: 100vh; /* De arriba a abajo */
+    border-radius: 0; /* Quitamos bordes redondeados para que llene la pantalla */
+    border: none;
+    background: rgba(15, 23, 42, 0.6); /* Un fondo un poco más sólido para contraste */
+    padding: 4rem; /* Espaciado interno generoso para que respire */
+}
+
+/* --- ESTILOS COMPARTIDOS Y DE LOGIN --- */
+
+.container {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 550px; 
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+h1 {
+    letter-spacing: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+p {
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--input-line);
+    color: white;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    font-family: "Outfit", sans-serif;
+}
+
+input:focus {
+    outline: none;
+    border-bottom-color: var(--primary-color);
+    padding-left: 5px;
+}
+
+input::placeholder {
+    color: #4b5563;
+}
+
+button {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(14, 78, 255, 0.3);
+    font-family: "Outfit", sans-serif;
+    letter-spacing: 5px;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-logout {
+    width: auto;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    padding: 8px 24px;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.btn-logout:hover {
+    background: #ef4444;
+    color: white;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px 30px; /* Más espacio para la vista ancha */
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.2s ease;
+}
+
+li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+}
+
+.input-group input {
+    flex: 1; /* El input toma todo el espacio disponible */
+}
+
+.input-group button {
+    width: 200px; /* Botón de agregar más ancho */
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}

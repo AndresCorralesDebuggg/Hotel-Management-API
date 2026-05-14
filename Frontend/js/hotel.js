@@ -1,5 +1,8 @@
 const API = "http://localhost:3000";
 
+
+
+
 async function cargarClientes() {
     const res = await fetch(`${API}/clientes`);
     const data = await res.json();
@@ -83,6 +86,7 @@ async function editarCliente() {
     bootstrap.Modal.getInstance(document.getElementById("modalEditar")).hide();
     cargarClientes();
 }
+
 
 
 cargarClientes();
