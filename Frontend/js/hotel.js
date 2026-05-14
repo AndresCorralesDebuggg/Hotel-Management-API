@@ -47,12 +47,24 @@ async function crearCliente() {
         return;
     }
 
-    await fetch(`${API}/clientes`, {
+    const token = localStorage.getItem('token'); 
+
+    const res = await fetch(`${API}/clientes`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json",
+            "Authorization": "Bearer " + token
+         },
         body: JSON.stringify({ nombre, direccion, telefono })
     });
 
+    if (res.ok){
+        "Se a creado correctamente"
+    }
+    else if (res.status === 401) {
+        alert("La sesion ha expirado")
+        logout()
+    }
+    
     document.getElementById("nombre").value    = "";
     document.getElementById("direccion").value = "";
     document.getElementById("telefono").value  = "";
