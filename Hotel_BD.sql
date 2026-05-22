@@ -44,8 +44,8 @@ create table pagos
 
 CREATE TABLE usuarios (
     id_usuario SERIAL PRIMARY KEY,
-    usuario VARCHAR(50) NOT NULL,
-    contrasena VARCHAR(50) NOT NULL
+    usuario VARCHAR(255) NOT NULL,
+    contrasena VARCHAR(255) NOT NULL
 );
 
 INSERT INTO usuarios (usuario, contrasena) VALUES 
